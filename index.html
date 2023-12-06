@@ -32,12 +32,15 @@
           <div>
             <h1 class="current-city" id="city">Paris</h1>
             <p class="current-details">
-              <span id="current-date"></span>, moderate rain <br />
-              Humidity: <strong>87%</strong>, Wind: <strong>7.2km/h</strong>
+              <span id="timeElement"></span>, 
+              <span id="detail"></span> <br />
+              Humidity: <strong><span id="humidity"></span></strong>, 
+              Wind:
+              <strong><span id="windspeed"></span></strong>
             </p>
           </div>
           <div class="current-temperature">
-            <span class="current-temperature-icon">☀️</span
+            <span class="current-temperature-icon" id="icon"></span
             ><span class="current-temperature-value" id="bigTemperature"
               >24</span
             ><span class="current-temperature-unit">°C</span>
@@ -46,7 +49,7 @@
       </main>
       <footer>
         <p>
-          This project was coded by
+          The JavaScript for this project was coded by
           <a href="#" target="_blank">Anna Dowding</a> and is
           <a href="#" target="_blank"> on GitHub</a> and
           <a href="#" target="_blank">hosted on Netlify</a>
