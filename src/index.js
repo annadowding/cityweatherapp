@@ -1,9 +1,14 @@
-//Making a dunction that will handle the API response
+//Making a function that will handle the API response
 //once axios has succeeded in getting it
 function hereWeGo(response) {
-  console.log(response);
+  let bigTemperature = document.querySelector("#bigTemperature");
+  bigTemperature.innerHTML = response.data.temperature.current;
+  // console.log(response);
 }
 
+//7. function to tell JS to substitute the user's input as
+//the cityName city part of the apiUrl that axois
+// got for us.
 function makeTheApiKeyMatchTheCity() {
   let apiKey = "c695b4fc90b605eea29b70ecbaft3f9o";
   let userSearch = document.querySelector("#user-search");
