@@ -2,7 +2,7 @@
 
 //Making a function that will handle the API response
 //once axios has succeeded in getting it
-function changeElements(response) {
+function hereWeGo(response) {
   let bigTemperature = document.querySelector("#bigTemperature");
   let icon = document.querySelector("#icon");
   let timeElement = document.querySelector("#timeElement");
@@ -20,7 +20,7 @@ function changeElements(response) {
   // timeElement.innerHTML = `${date.getHours()}:${date.getMinutes()}`;
   icon.innerHTML = `<img ${response.data.condition.icon_url} class="weather-app-icon />`;
   bigTemperature.innerHTML = Math.round(response.data.temperature.current);
-  formatDate(date);
+  formatDate(date); //needed somewhere else
   // console.log(response);
 }
 
@@ -50,13 +50,13 @@ function formatDate(date) {
 //7. function to tell JS to substitute the user's input as
 //the cityName city part of the apiUrl that axois
 // got for us.
-function makeApiKeyMatchCity() {
+function makeTheApiKeyMatchTheCity() {
   let apiKey = "c695b4fc90b605eea29b70ecbaft3f9o";
   let userSearch = document.querySelector("#user-search");
   let cityName = userSearch.value;
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${cityName}&key=${apiKey}`;
-  axios.get(apiUrl).then(updateElements);
-  // function writeTheNewCity (makeApiKeyMatchCity);
+  axios.get(apiUrl).then(hereWeGo);
+  // function writeTheNewCity (makeTheApiKeyMatchTheCity);
 }
 
 //5/6.I copy pasted axios CDN into index.html. Now access API:
@@ -64,7 +64,7 @@ let apiKey = "c695b4fc90b605eea29b70ecbaft3f9o";
 let apiUrl =
   "https://api.shecodes.io/weather/v1/current?query={city}&key={key}";
 
-function holdUserSearchSubmission(event) {
+function heybaby(event) {
   event.preventDefault();
   //2. selecting the enter a city... part of the form.
   let userSearch = document.querySelector("#user-search");
@@ -72,11 +72,9 @@ function holdUserSearchSubmission(event) {
   let city = document.querySelector("#city");
   //4. make the h1 HTML match the Enter a city...entered by a user
   city.innerHTML = userSearch.value;
-  makeApiKeyMatchCity(userSearch.value);
+  makeTheApiKeyMatchTheCity(userSearch.value);
 }
 
 //1. selecting the whole form and adding a submit event listener
 let form = document.querySelector("#form");
-form.addEventListener("submit", );
-
-// makeApiKeyMatchCity("Paris");
+form.addEventListener("submit", heybaby);
