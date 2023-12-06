@@ -18,7 +18,7 @@ function hereWeGo(response) {
   timeElement.innerHTML = formatDate(date);
   //Replaced by above
   // timeElement.innerHTML = `${date.getHours()}:${date.getMinutes()}`;
-  icon.innerHTML = `<img ${response.data.condition.icon_url} class="weather-app-icon />`;
+  icon.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-app-icon" />`;
   bigTemperature.innerHTML = Math.round(response.data.temperature.current);
   formatDate(date); //needed somewhere else
   // console.log(response);
